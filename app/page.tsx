@@ -3,87 +3,124 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Brain, Calendar, Code, Cpu, Database, Layers, Rocket, Server, Trophy, Users } from "lucide-react"
+import { 
+  Brain, 
+  Calendar, 
+  Code, 
+  Cpu, 
+  Database, 
+  ExternalLink,
+  Layers, 
+  Rocket, 
+  Server, 
+  Trophy, 
+  Users 
+} from "lucide-react"
 
 export default function HackathonLanding() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col items-center">
+      {/* Background Elements */}
+      <div className="fixed inset-0 -z-10 bg-grid opacity-30" />
+      <div className="fixed inset-0 -z-10 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]" />
+      
+      {/* Header */}
       <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
+        <div className="container max-w-6xl mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
           <div className="flex gap-2 items-center text-xl font-bold">
-            <Brain className="h-6 w-6" />
-            <span>SmallModelHack</span>
+            <Brain className="h-6 w-6 text-primary" />
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary from-15% via-accent via-50% to-primary to-85%">SmallModelHack</span>
           </div>
           <div className="flex flex-1 items-center justify-end space-x-4">
-            <nav className="flex items-center space-x-2">
+            <nav className="hidden md:flex items-center space-x-6">
               <Link
                 href="#about"
-                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary relative group"
               >
                 About
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
               </Link>
               <Link
                 href="#themes"
-                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary relative group"
               >
                 Themes
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
               </Link>
               <Link
                 href="#timeline"
-                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary relative group"
               >
                 Timeline
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
               </Link>
               <Link
                 href="#prizes"
-                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary relative group"
               >
                 Prizes
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
               </Link>
               <Link
                 href="#faq"
-                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary relative group"
               >
                 FAQ
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
               </Link>
-              <Button size="sm" asChild>
+              <Button size="sm" className="relative overflow-hidden group bg-primary hover:bg-primary/90" asChild>
                 <Link href="https://lu.ma/kz4zjpyf" target="_blank">
-                  Register Now
+                  <span className="relative z-10 flex items-center gap-1">Register Now <ExternalLink className="h-3.5 w-3.5 ml-1" /></span>
                 </Link>
               </Button>
             </nav>
+            <Button size="icon" variant="ghost" className="md:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            </Button>
           </div>
         </div>
       </header>
-      <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-b from-background to-muted">
-          <div className="container px-4 md:px-6">
+      
+      {/* Main Content */}
+      <main className="flex-1 w-full">
+        {/* Hero Section */}
+        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-40 relative overflow-hidden">
+          <div className="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_500px]">
-              <div className="flex flex-col justify-center space-y-4">
+              <div className="flex flex-col justify-center space-y-6 animate-fade-in">
                 <div className="space-y-2">
-                  <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+                  <div className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground shadow hover:bg-primary/80 mb-4">
+                    <span className="relative flex h-2 w-2 mr-1.5">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-foreground opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-foreground"></span>
+                    </span>
+                    Registration Open!
+                  </div>
+                  <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none bg-clip-text text-transparent bg-gradient-to-r from-primary from-0% via-accent via-50% to-primary to-100% animate-slide-up">
                     Train Small Models, Make Big Impact
                   </h1>
-                  <p className="max-w-[600px] text-muted-foreground md:text-xl">
+                  <p className="max-w-[600px] text-muted-foreground md:text-xl mt-4 animate-slide-up" style={{ animationDelay: "150ms" }}>
                     Join our hackathon to build and train efficient small models using Llama, Hugging Face, and
                     cutting-edge GPU providers.
                   </p>
                 </div>
-                <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <Button size="lg" className="gap-1" asChild>
+                <div className="flex flex-col gap-3 min-[400px]:flex-row animate-slide-up" style={{ animationDelay: "300ms" }}>
+                  <Button size="lg" className="relative overflow-hidden group shadow-md bg-gradient-to-r from-primary to-accent hover:saturate-150 hover:shadow-lg" asChild>
                     <Link href="https://lu.ma/kz4zjpyf" target="_blank">
-                      <Rocket className="h-4 w-4" />
-                      Register Now
+                      <span className="relative z-10 flex items-center gap-1.5">
+                        <Rocket className="h-4 w-4" />
+                        Register Now
+                      </span>
                     </Link>
                   </Button>
                 </div>
-                <div className="flex items-center space-x-4 text-sm">
-                  <div className="flex items-center gap-1">
-                    <Calendar className="h-4 w-4" />
-                    <span>March 31-April 1, 2025</span>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center sm:space-x-8 text-sm space-y-3 sm:space-y-0 pt-2 animate-slide-up" style={{ animationDelay: "450ms" }}>
+                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary/80 backdrop-blur-sm">
+                    <Calendar className="h-4 w-4 text-primary" />
+                    <span>March 28th-30th, 2025</span>
                   </div>
-                  <div className="flex items-center gap-1">
-                    <Users className="h-4 w-4" />
+                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary/80 backdrop-blur-sm">
+                    <Users className="h-4 w-4 text-primary" />
                     <span>In-person Only</span>
                   </div>
                 </div>
@@ -102,7 +139,7 @@ export default function HackathonLanding() {
         </section>
 
         <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-background">
-          <div className="container px-4 md:px-6">
+          <div className="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-primary px-3 py-1 text-sm text-primary-foreground">
@@ -155,7 +192,7 @@ export default function HackathonLanding() {
         </section>
 
         <section id="themes" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
-          <div className="container px-4 md:px-6">
+          <div className="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-primary px-3 py-1 text-sm text-primary-foreground">
@@ -257,7 +294,7 @@ export default function HackathonLanding() {
         </section>
 
         <section id="timeline" className="w-full py-12 md:py-24 lg:py-32 bg-background">
-          <div className="container px-4 md:px-6">
+          <div className="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-primary px-3 py-1 text-sm text-primary-foreground">
@@ -279,11 +316,11 @@ export default function HackathonLanding() {
                   <h3 className="flex items-center mb-1 text-lg font-semibold">
                     Day 1: Kickoff & Workshops
                     <span className="bg-primary/10 text-primary text-sm font-medium mr-2 px-2.5 py-0.5 rounded ml-3">
-                      March 31
+                      March 28th
                     </span>
                   </h3>
                   <time className="block mb-2 text-sm font-normal leading-none text-muted-foreground">
-                    Saturday, 9:00 AM - 8:00 PM
+                    Friday, 9:00 AM - 8:00 PM
                   </time>
                   <p className="mb-4 text-base font-normal text-muted-foreground">
                     Opening ceremony, team formation, and workshops on model training fundamentals, Llama architecture,
@@ -297,7 +334,7 @@ export default function HackathonLanding() {
                   <h3 className="flex items-center mb-1 text-lg font-semibold">
                     Day 2: Final Submissions & Awards
                     <span className="bg-primary/10 text-primary text-sm font-medium mr-2 px-2.5 py-0.5 rounded ml-3">
-                      April 1
+                      March 30th
                     </span>
                   </h3>
                   <time className="block mb-2 text-sm font-normal leading-none text-muted-foreground">
@@ -314,7 +351,7 @@ export default function HackathonLanding() {
         </section>
 
         <section id="prizes" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
-          <div className="container px-4 md:px-6">
+          <div className="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-primary px-3 py-1 text-sm text-primary-foreground">
@@ -388,7 +425,7 @@ export default function HackathonLanding() {
         </section>
 
         <section id="sponsors" className="w-full py-12 md:py-24 lg:py-32 bg-background">
-          <div className="container px-4 md:px-6">
+          <div className="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-primary px-3 py-1 text-sm text-primary-foreground">
@@ -470,7 +507,7 @@ export default function HackathonLanding() {
         </section>
 
         <section id="faq" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
-          <div className="container px-4 md:px-6">
+          <div className="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-primary px-3 py-1 text-sm text-primary-foreground">FAQ</div>
@@ -546,7 +583,7 @@ export default function HackathonLanding() {
         </section>
 
         <section className="w-full py-12 md:py-24 lg:py-32 bg-primary text-primary-foreground">
-          <div className="container px-4 md:px-6">
+          <div className="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid gap-6 lg:grid-cols-2">
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
@@ -589,7 +626,7 @@ export default function HackathonLanding() {
         </section>
       </main>
       <footer className="w-full py-6 bg-background border-t">
-        <div className="container px-4 md:px-6">
+        <div className="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex gap-2 items-center text-xl font-bold mb-4 md:mb-0">
               <Brain className="h-6 w-6" />
